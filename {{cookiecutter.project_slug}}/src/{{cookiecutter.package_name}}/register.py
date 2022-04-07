@@ -1,10 +1,9 @@
 from {{ cookiecutter.package_name }}.example import goal, rule, target_types
+from {{ cookiecutter.package_name }}.target_types import ProtobufSourceTarget
 
 
 def target_types():
-    return (
-        target_types.ProtobufSourceTarget,
-    )
+    return (ProtobufSourceTarget,)
 
 
 def rules():
