@@ -1,0 +1,28 @@
+[GLOBAL]
+pants_version = "{{cookiecutter.pants_version}}"
+backend_packages = [
+    "pants.backend.experimental.python",
+    "pants.backend.experimental.python.lint.autoflake",
+    "pants.backend.plugin_development",
+    "pants.backend.python",
+    "pants.backend.python.lint.black",
+    "pants.backend.python.lint.docformatter",
+    "pants.backend.python.lint.flake8",
+    "pants.backend.python.lint.isort",
+    "pants.backend.python.typecheck.mypy",
+]
+
+[anonymous-telemetry]
+# See https://www.pantsbuild.org/v2.6/docs/anonymous-telemetry#what-data-is-sent for details.
+enabled = {{ cookiecutter.enable_anonymous_telemetry }}
+repo_id = "{{ uuid4() }}"
+
+[python]
+interpreter_constraints = ["{{ cookiecutter.interpreter_constraints }}"]
+lockfile_generator = "pex"
+enable_resolves = true
+default_resolve = "3rdparty-deps"
+resolves = { 3rdparty-deps = "pants.lock" }
+
+[mypy]
+config = "mypy.ini"

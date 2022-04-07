@@ -1,0 +1,16 @@
+*.pyc
+.idea
+*.egg-info
+.eggs
+.emacs*
+.#*
+.pytest_cache
+.pyenv*
+.vscode
+*#
+
+# Pants workspace files
+/.pants.d/
+/dist/
+/.pids
+/.pants.workdir.file_lock*

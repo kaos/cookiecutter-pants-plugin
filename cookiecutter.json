@@ -1,0 +1,11 @@
+{
+  "project_name": "My Pantsbuild Plugin",
+  "project_slug": "{{ cookiecutter.project_name|lower|replace(' ', '-') }}",
+  "package_name": "{{ cookiecutter.project_slug|lower|replace('-', '_')|replace('_plugin', '') }}",
+  "pants_version": "2.12.0.dev1",
+  "project_version": "0.0.1",
+  "interpreter_constraints": ">=3.8, <3.9",
+  "enable_anonymous_telemetry": ["true", "false"],
+  "twine_publish_repo": "@pypi",
+  "_extensions": ["cookiecutter.extensions.UUIDExtension"]
+}
